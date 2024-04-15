@@ -25,5 +25,9 @@
             android:name=".HomePage"
             android:theme="@style/Theme.Grupo14">
         </activity>
+        <activity
+            android:name=".RegisterPage"
+            android:theme="@style/Theme.Grupo14">
+        </activity>
     </application>
 </manifest>

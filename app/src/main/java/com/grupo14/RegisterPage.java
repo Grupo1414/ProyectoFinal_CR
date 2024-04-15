@@ -2,6 +2,7 @@ package com.grupo14;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,9 @@ public class RegisterPage extends AppCompatActivity {
 
         editTextEmail= findViewById(R.id.email);
         editTextPassword=findViewById(R.id.password);
+        // Oculta los caracteres de la contraseña y muestra asteriscos en su lugar
+        editTextPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
         signIn=findViewById(R.id.sign_in);
         signUp=findViewById(R.id.sign_up);
 
@@ -39,7 +43,7 @@ public class RegisterPage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent= new Intent(RegisterPage.this, MainActivity.class);
                 startActivity(intent);
-                finish();
+                //finish();
             }
         });
 
@@ -67,7 +71,7 @@ public class RegisterPage extends AppCompatActivity {
                                     Toast.makeText(RegisterPage.this, "Registratios successful", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(RegisterPage.this, MainActivity.class);
                                     startActivity(intent);
-                                    finish();
+                                    //finish();
                                 }
                                 else{
                                     Toast.makeText(RegisterPage.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
@@ -76,5 +80,10 @@ public class RegisterPage extends AppCompatActivity {
                         });
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        // Volver a la pantalla anterior y no salir de la aplicación
+        finish();
     }
 }

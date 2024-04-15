@@ -21,4 +21,9 @@ public class HomePage extends AppCompatActivity {
             return insets;
         });
     }
+    @Override
+    public void onBackPressed() {
+        // Volver a la pantalla anterior y no salir de la aplicación
+        finish();
+    }
 }

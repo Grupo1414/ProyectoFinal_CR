@@ -2,6 +2,7 @@ package com.grupo14;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -21,10 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     TextInputEditText editTextEmail, editTextPassword;
     Button signIn;
-
     TextView signUp;
     FirebaseAuth firebaseAuth= FirebaseAuth.getInstance();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -33,18 +32,22 @@ public class MainActivity extends AppCompatActivity {
 
         editTextEmail= findViewById(R.id.email);
         editTextPassword=findViewById(R.id.password);
+        // Oculta los caracteres de la contraseña y muestra asteriscos en su lugar
+        editTextPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
         signIn=findViewById(R.id.sign_in);
         signUp=findViewById(R.id.sign_up);
 
+        //funcion para registrar nuevo usuario
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(MainActivity.this, RegisterPage.class);
                 startActivity(intent);
-                finish();
+                //finish();
             }
         });
-
+        //funcion para loguearse
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(MainActivity.this, HomePage.class);
                                     startActivity(intent);
-                                    finish();
+                                    //finish();
                                 }
                                 else{
                                     Toast.makeText(MainActivity.this, "Authentication Failed.", Toast.LENGTH_SHORT).show();
@@ -78,5 +81,10 @@ public class MainActivity extends AppCompatActivity {
                         });
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        // Volver a la pantalla anterior y no salir de la aplicación
+        finish();
     }
 }
