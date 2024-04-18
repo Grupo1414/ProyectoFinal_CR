@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Encabezado -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1a1a1a"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Entrega: Calle Francisco Javier de Moya"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+        <!-- Agrega más detalles del encabezado si es necesario -->
+    </LinearLayout>
+
+    <!-- Botón para añadir más artículos, colocado encima del footer -->
+    <Button
+        android:id="@+id/button_add_more_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/footer"
+        android:background="#e0a80d"
+        android:text="Añadir artículos"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="16dp"/>
+
+
+    <!-- Lista de productos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_items_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@id/button_add_more_items"
+        android:layout_below="@id/header"
+        android:background="#000000"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp" />
+
+    <!-- Pie de página -->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#1a1a1a"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Subtotal"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/subtotal_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12,06 €"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:gravity="end"/>
+
+        <Button
+            android:id="@+id/checkout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#e0a80d"
+            android:text="Pagar"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</RelativeLayout>
