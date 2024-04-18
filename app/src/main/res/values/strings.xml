@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Proyecto_final_CRJ</string>
+    <string name="add_to_cart">Añadir al carrito</string>
+    <string name="delete_item">Eliminar ítem</string>
+    <string-array name="delivery_options">
+        <item>Estándar</item>
+        <item>Preferente</item>
+    </string-array>
+    <string-array name="payment_methods">
+        <item>Tarjeta de crédito</item>
+        <item>Bizum</item>
+        <item>Pago en mano</item>
+        <!-- Añade más métodos de pago si es necesario -->
+    </string-array>
+    <string-array name="country_array">
+        <item>España</item>
+        <item>Francia</item>
+        <item>Estados Unidos</item>
+        <!-- ... otros países ... -->
+    </string-array>
+
 </resources>

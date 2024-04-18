@@ -8,5 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="colorPressed">#EFEFEF</color>
+    <color name="colorFocused">#DFDFDF</color>
+    <color name="colorDefault">#FFFFFF</color>
+
+    <color name="light_gray">#D3D3D3</color>
+
     <color name="blue">#03A9F4</color>
 </resources>
