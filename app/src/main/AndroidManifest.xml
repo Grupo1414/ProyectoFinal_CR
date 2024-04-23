@@ -11,59 +11,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.Grupo14"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Grupo14">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".HomePage"
-            android:theme="@style/Theme.Grupo14">
-        </activity>
-
+            android:theme="@style/Theme.Grupo14" />
         <activity
             android:name=".AddCardActivity"
-            android:theme="@style/Theme.Grupo14">
-        </activity>
-
+            android:theme="@style/Theme.Grupo14" />
         <activity
             android:name=".PaymentActivity"
-            android:theme="@style/Theme.Grupo14">
-        </activity>
-
+            android:theme="@style/Theme.Grupo14" />
         <activity
             android:name=".CartAdapter"
-            android:theme="@style/Theme.Grupo14">
-        </activity>
-
+            android:theme="@style/Theme.Grupo14" />
+        <activity
+            android:name=".PaymentActivity2"
+            android:theme="@style/Theme.Grupo14" />
         <activity
             android:name=".CartActivity"
-            android:theme="@style/Theme.Grupo14">
-        </activity>
-
+            android:theme="@style/Theme.Grupo14" />
         <activity
             android:name=".InfoActivity"
-            android:theme="@style/Theme.Grupo14">
-        </activity>
-
+            android:theme="@style/Theme.Grupo14" />
         <activity
             android:name=".ProductDetailActivity"
-            android:theme="@style/Theme.Grupo14">
-        </activity>
-
+            android:theme="@style/Theme.Grupo14" />
         <activity
             android:name=".CartaPrincipal"
-            android:theme="@style/Theme.Grupo14">
-        </activity>
-
+            android:theme="@style/Theme.Grupo14" />
         <activity
             android:name=".RegisterPage"
-            android:theme="@style/Theme.Grupo14">
-        </activity>
+            android:theme="@style/Theme.Grupo14" />
+
     </application>
+
 </manifest>
