@@ -26,6 +26,9 @@
             android:name=".HomePage"
             android:theme="@style/Theme.Grupo14" />
         <activity
+            android:name=".DeliveryOptionsActivity"
+            android:theme="@style/Theme.Grupo14"/>
+        <activity
             android:name=".AddCardActivity"
             android:theme="@style/Theme.Grupo14" />
         <activity
@@ -52,7 +55,6 @@
         <activity
             android:name=".RegisterPage"
             android:theme="@style/Theme.Grupo14" />
-
     </application>
 
 </manifest>

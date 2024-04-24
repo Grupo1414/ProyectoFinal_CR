@@ -31,6 +31,7 @@ public class CartActivity extends AppCompatActivity {
         subtotalTextView = findViewById(R.id.subtotal_price);
         payButton = findViewById(R.id.checkout_button);
         addButton = findViewById(R.id.button_add_more_items);
+        Button checkoutButton = findViewById(R.id.checkout_button);
 
 
         // Obtiene los ítems del carrito, asegurándose de que la lista no sea nula
@@ -47,16 +48,24 @@ public class CartActivity extends AppCompatActivity {
         recyclerView.setAdapter(cartAdapter);
 
 
-
+        //Boton para ir a DeliveryOption, comer aqui, domicilio etc
+        checkoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CartActivity.this, DeliveryOptionsActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         //Configuración de los botones ( Añadir más y Pagar )
+        //Nos lleva a
 
-        payButton.setOnClickListener(v -> {
+     /*   payButton.setOnClickListener(v -> {
             Intent intent = new Intent(CartActivity.this, PaymentActivity.class);
             // Puedes enviar información adicional a PaymentActivity si es necesario.
             startActivity(intent);
-        });
+        }); */
 
         //Boton para añadir mas alimentos, nos lleva a mainActivity
         addButton.setOnClickListener(new View.OnClickListener() {
