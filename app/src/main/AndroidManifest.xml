@@ -27,7 +27,7 @@
             android:theme="@style/Theme.Grupo14" />
         <activity
             android:name=".DeliveryOptionsActivity"
-            android:theme="@style/Theme.Grupo14"/>
+            android:theme="@style/Theme.Grupo14" />
         <activity
             android:name=".AddCardActivity"
             android:theme="@style/Theme.Grupo14" />
@@ -44,8 +44,11 @@
             android:name=".CartActivity"
             android:theme="@style/Theme.Grupo14" />
         <activity
-            android:name=".InfoActivity"
+            android:name=".comerAqui"
             android:theme="@style/Theme.Grupo14" />
+        <activity
+            android:name=".recoger"
+            android:theme="@style/Theme.Grupo14"/>
         <activity
             android:name=".ProductDetailActivity"
             android:theme="@style/Theme.Grupo14" />

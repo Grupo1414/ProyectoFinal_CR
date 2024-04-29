@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFF3E0">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido a Comer Aquí"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textColor="#FF9800"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingresa tu nombre"
+        android:inputType="textPersonName"
+        android:background="@android:drawable/edit_text"
+        android:padding="12dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecciona tu mesa"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:layout_marginTop="24dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerTables"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/table_numbers"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Aquí puedes agregar más opciones si lo consideras necesario -->
+
+    <Button
+        android:id="@+id/buttonConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirmar"
+        android:background="@drawable/button_rounded_orange"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"/>
+</LinearLayout>

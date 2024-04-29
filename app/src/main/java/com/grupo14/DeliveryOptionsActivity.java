@@ -28,23 +28,27 @@ public class DeliveryOptionsActivity extends AppCompatActivity {
         radioButtonDineIn = findViewById(R.id.radioButtonDineIn);
         buttonContinue = findViewById(R.id.buttonContinue);
 
-        // Configura el evento de clic para el botón de continuar
         buttonContinue.setOnClickListener(v -> {
-            // Aquí puedes recoger la opción seleccionada y proceder como necesites
             int selectedId = optionsContainer.getCheckedRadioButtonId();
-            // Por ejemplo, inicia la siguiente actividad dependiendo de la selección
             Intent intent;
+
+            // Reemplaza "DeliveryActivity.class", "PickupActivity.class" y "DineInActivity.class" con las clases de tus actividades reales.
             if (selectedId == radioButtonDelivery.getId()) {
-                // Lógica para la entrega a domicilio
+                intent = new Intent(DeliveryOptionsActivity.this, PaymentActivity.class);
             } else if (selectedId == radioButtonPickup.getId()) {
-                // Lógica para recoger en tienda
+                intent = new Intent(DeliveryOptionsActivity.this, recoger.class);
             } else if (selectedId == radioButtonDineIn.getId()) {
-                // Lógica para comer en el lugar
+                intent = new Intent(DeliveryOptionsActivity.this, comerAqui.class);
+            } else {
+                // Si no se seleccionó ninguna opción, puedes optar por no hacer nada
+                // o mostrar un mensaje al usuario, o simplemente seleccionar una opción por defecto
+                return;
             }
 
-            // Supongamos que todos llevan a la misma PaymentActivity por ahora
-            intent = new Intent(DeliveryOptionsActivity.this, PaymentActivity.class);
             startActivity(intent);
         });
+
     }
 }
+
+//  PaymentActivity.class);
