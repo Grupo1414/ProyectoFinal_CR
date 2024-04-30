@@ -28,9 +28,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/footer"
-        android:background="#e0a80d"
+        android:background="#CDDC39"
         android:text="Añadir artículos"
-        android:textColor="#ffffff"
+        android:textColor="@color/black"
         android:layout_marginBottom="16dp"/>
 
 
@@ -75,9 +75,9 @@
             android:id="@+id/checkout_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#e0a80d"
+            android:background="#CDDC39"
             android:text="Pagar"
-            android:textColor="#ffffff" />
+            android:textColor="@color/black" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -76,7 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Añadir tarjeta"
-        android:background="@drawable/button_background"
+        android:background="#CDDC39"
         android:textColor="@android:color/white"
         android:layout_below="@id/editText_cardholder_name"
         android:layout_marginTop="24dp"/>

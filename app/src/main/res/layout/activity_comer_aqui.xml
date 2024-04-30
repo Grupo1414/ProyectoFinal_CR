@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FFF3E0">
+    android:background="#FFF3E0"
+    android:padding="16dp">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenido a Comer Aquí"
+        android:text="Selecciona tu mesa"
         android:textSize="24sp"
-        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:textColor="#FF9800"
-        android:textStyle="bold"
-        android:layout_marginBottom="32dp"/>
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/editTextName"
@@ -22,32 +22,89 @@
         android:layout_height="wrap_content"
         android:hint="Ingresa tu nombre"
         android:inputType="textPersonName"
-        android:background="@android:drawable/edit_text"
-        android:padding="12dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Selecciona tu mesa"
-        android:textAppearance="?attr/textAppearanceListItem"
-        android:layout_marginTop="24dp"/>
+        android:layout_below="@id/titleText"
+        android:layout_marginTop="10dp"/>
 
     <Spinner
         android:id="@+id/spinnerTables"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/table_numbers"
-        android:layout_marginTop="8dp"/>
+    android:layout_below="@id/editTextName"
+    android:layout_marginTop="10dp"/>
 
-    <!-- Aquí puedes agregar más opciones si lo consideras necesario -->
+    <LinearLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/spinnerTables"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <!-- Mesas del 1 al 3 -->
+        <ImageView android:id="@+id/table1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/table_icon"
+            android:tag="1"
+            android:layout_marginRight="10dp"/>
+
+        <ImageView android:id="@+id/table2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/table_icon"
+            android:tag="2"
+            android:layout_marginRight="10dp"/>
+
+        <ImageView android:id="@+id/table3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/table_icon"
+            android:tag="3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/tableLayout"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <!-- Mesas del 4 al 6 -->
+        <ImageView android:id="@+id/table4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/table_icon"
+            android:tag="4"
+            android:layout_marginRight="10dp"/>
+
+        <ImageView android:id="@+id/table5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/table_icon"
+            android:tag="5"
+            android:layout_marginRight="10dp"/>
+
+        <ImageView android:id="@+id/table6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/table_icon"
+            android:tag="6" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonConfirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Confirmar"
-        android:background="@drawable/button_rounded_orange"
-        android:textColor="#FFFFFF"
-        android:layout_marginTop="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:background="#CDDC39"
+        android:textColor="@color/black"
         android:textSize="18sp"/>
-</LinearLayout>
+</RelativeLayout>

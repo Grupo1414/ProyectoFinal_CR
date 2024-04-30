@@ -38,8 +38,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Guardar"
-            android:textColor="#FFFFFF"
-            android:background="@color/purple_500"
+            android:textColor="@color/black"
+            android:background="#CDDC39"
             android:layout_marginBottom="24dp" />
 
         <!-- Tiempo Estimado de Entrega -->
@@ -101,16 +101,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Añadir tarjeta"
-            android:textColor="#FFFFFF"
-            android:background="@color/purple_500"
+            android:textColor="@color/black"
+            android:background="#CDDC39"
             android:layout_marginBottom="16dp" />
         <Button
             android:id="@+id/button_pay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pagar"
-            android:textColor="#FFFFFF"
-            android:background="@color/purple_500"
+            android:textColor="@color/black"
+            android:background="#CDDC39"
             android:layout_marginBottom="16dp" />
 
         <!-- Espacio adicional para más elementos si es necesario -->
