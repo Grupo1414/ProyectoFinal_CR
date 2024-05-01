@@ -11,8 +11,8 @@
         android:layout_weight="1"
         android:text="Nombre del artículo"
         android:textSize="18sp"
-    android:textColor="#FFFFFF"
-    android:fontFamily="sans-serif-light"  />
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-light"  />
 
     <!-- Botón para eliminar el ítem -->
     <ImageButton
@@ -20,7 +20,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@android:drawable/ic_delete"
-        android:tint="#FF0000"
         android:background="?android:attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/delete_item" />
 </LinearLayout>

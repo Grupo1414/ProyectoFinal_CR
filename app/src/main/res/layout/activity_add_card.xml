@@ -3,7 +3,7 @@
     android:id="@+id/main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="#FFF3E0"
     android:padding="16dp">
 
     <!-- Título de la sección de añadir tarjeta -->
@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Añadir una tarjeta de crédito o débito"
+        android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"/>
@@ -28,6 +29,18 @@
         android:layout_below="@id/textView_add_card"
         android:layout_marginTop="16dp"/>
 
+    <!-- Texto "Alias Tarjeta" -->
+    <EditText
+        android:id="@+id/textView_alias_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Alias tarjeta"
+        android:inputType="numberDecimal"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:layout_below="@id/editText_card_number"
+        android:layout_marginTop="16dp"/>
+
     <EditText
         android:id="@+id/editText_expiry_date"
         android:layout_width="match_parent"
@@ -36,8 +49,8 @@
         android:inputType="date"
         android:background="@drawable/edit_text_background"
         android:padding="12dp"
-        android:layout_below="@id/editText_card_number"
-        android:layout_marginTop="16dp"/>
+        android:layout_below="@id/textView_alias_card"
+        android:layout_marginTop="8dp"/>
 
     <EditText
         android:id="@+id/editText_cvc"
@@ -76,8 +89,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Añadir tarjeta"
-        android:background="#CDDC39"
-        android:textColor="@android:color/white"
+        android:background="@drawable/button_rounded_orange"
+        android:textColor="@color/black"
         android:layout_below="@id/editText_cardholder_name"
         android:layout_marginTop="24dp"/>
 

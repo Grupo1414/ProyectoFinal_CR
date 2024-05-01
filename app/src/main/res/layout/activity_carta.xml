@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFF3E0">
 
     <!-- Cabecera -->
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="16dp"
         android:background="?attr/colorPrimary"
-        android:gravity="center_vertical">
+        android:gravity="center">
 
         <!-- Logo y texto de la cabecera aquí -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Restaurante RamonCrisJose"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-        <!-- Añade el resto de elementos de la cabecera como en la imagen proporcionada -->
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_gravity="center"
+            android:paddingBottom="8dp"/>
+
+        <!-- Texto "Carta" debajo del nombre del restaurante -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nuestra Carta"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="italic"
+            android:layout_gravity="center"
+            android:paddingBottom="16dp"/>
 
     </LinearLayout>
 
@@ -27,460 +39,439 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/header"/>
+        android:layout_below="@id/header">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="8dp">
 
-            <!-- Elemento de comida 1 -->
-            <!-- Repite este bloque para cada elemento de comida, asegúrate de tener imágenes con los nombres correctos -->
+            <!-- Ejemplo de elemento de menú con mayor separación y mejor diseño -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:background="#FFF3E0"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                >
 
+                <ImageView
+                    android:id="@+id/foto1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/foto1"
+                    android:scaleType="centerCrop"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Asadillo de pimientos confitados con queso"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15,55 €"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pimientos confitados coronados con queso feta"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/addToCartButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_input_add"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/add_to_cart"/>
+            </LinearLayout>
+
+            <!-- Elemento de menú 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#FFF3E0"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/foto2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/foto2"
+                    android:scaleType="centerCrop"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hamburguesa especial de la Casa"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14.50 €"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deliciosa hamburguesa de pollo con nuestro aderezo espcial"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/addToCartButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_input_add"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/add_to_cart"/>
+            </LinearLayout>
+
+            <!-- Elemento de menú 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#FFF3E0"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/foto3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/foto3"
+                    android:scaleType="centerCrop"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spaguettis Bolognesa de la casa"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15,85 €"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pasta al estilo bolognesa "
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/addToCartButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_input_add"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/add_to_cart"/>
+            </LinearLayout>
+
+            <!-- Elemento de menú 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#FFF3E0"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/foto4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/foto4"
+                    android:scaleType="centerCrop"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rape sapito con ajetes tiernos"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="19,85 €"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rape sapito confitado con ajos tiernos a baja temperatura"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/addToCartButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_input_add"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/add_to_cart"/>
+            </LinearLayout>
+
+            <!-- Elemento de menú 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#FFF3E0"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/foto5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/foto5"
+                    android:scaleType="centerCrop"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kebap Mixto de la Casa"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8,85 €"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kebap de la casa con pollo de corral y verduras de la huerta"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/addToCartButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_input_add"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/add_to_cart"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:orientation="horizontal"
+                android:background="#FFF3E0"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp">
 
-                <!-- Item 1 -->
+                <ImageView
+                    android:id="@+id/foto6"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/foto6"
+                    android:scaleType="centerCrop"/>
+
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/background_item_selector"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="8dp">
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="8dp">
 
-                    <!-- Image for Item 1 -->
-                    <ImageView
-                        android:id="@+id/foto1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/foto1"
-                        android:scaleType="centerCrop"/>
-
-                    <!-- Details for Item 1 -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingLeft="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Asadillo de pimientos confitados con queso"
-                            android:textSize="18sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1,55 €"
-                            android:textSize="14sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pollo chicken burger, lechuga y salsa BBQ"
-                            android:textSize="14sp"/>
-
-                    </LinearLayout>
-
-                    <!-- Add Button for Item 1 -->
-                    <ImageButton
-                        android:id="@+id/addToCartButton1"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@android:drawable/ic_input_add"
-                        android:background="?android:attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="@string/add_to_cart"/>
-                </LinearLayout>
+                        android:text="Albondigas caseras"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
 
-                <!-- Elemento de menú 2 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/background_item_selector"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:id="@+id/foto2"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/foto2"
-                        android:scaleType="centerCrop"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingLeft="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Chicken Mayo"
-                            android:textSize="18sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1,85 €"
-                            android:textSize="14sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pollo crujiente con salsa mayo y lechuga"
-                            android:textSize="14sp"/>
-                    </LinearLayout>
-
-                    <ImageButton
-                        android:id="@+id/addToCartButton2"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@android:drawable/ic_input_add"
-                        android:background="?android:attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="@string/add_to_cart"/>
-                </LinearLayout>
+                        android:text="13,85 €"
+                        android:textSize="14sp"/>
 
-                <!-- Elemento de menú 2 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/background_item_selector"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:id="@+id/foto3"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/foto3"
-                        android:scaleType="centerCrop"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingLeft="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Spaguettis Bolognesa de la casa"
-                            android:textSize="18sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1,85 €"
-                            android:textSize="14sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pollo crujiente con salsa mayo y lechuga"
-                            android:textSize="14sp"/>
-                    </LinearLayout>
-
-                    <ImageButton
-                        android:id="@+id/addToCartButton3"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@android:drawable/ic_input_add"
-                        android:background="?android:attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="@string/add_to_cart"/>
+                        android:text="Albondigas caseras de la abuela con el toque fresco de la huerta catalana"
+                        android:textSize="14sp"/>
                 </LinearLayout>
 
-                <!-- Elemento de menú 2 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <ImageButton
+                    android:id="@+id/addToCartButton6"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/background_item_selector"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="8dp">
+                    android:src="@android:drawable/ic_input_add"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/add_to_cart"/>
+            </LinearLayout>
 
-                    <ImageView
-                        android:id="@+id/foto4"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/foto4"
-                        android:scaleType="centerCrop"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#FFF3E0"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp">
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingLeft="8dp">
+                <ImageView
+                    android:id="@+id/foto7"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/foto7"
+                    android:scaleType="centerCrop"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Rape con ajetes"
-                            android:textSize="18sp"
-                            android:textStyle="bold"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="8dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1,85 €"
-                            android:textSize="14sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pollo crujiente con salsa mayo y lechuga"
-                            android:textSize="14sp"/>
-                    </LinearLayout>
-
-                    <ImageButton
-                        android:id="@+id/addToCartButton4"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@android:drawable/ic_input_add"
-                        android:background="?android:attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="@string/add_to_cart"/>
-                </LinearLayout>
+                        android:text="Pizza al gusto en horno de leña"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
 
-                <!-- Elemento de menú 2 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/background_item_selector"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:id="@+id/foto5"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/foto5"
-                        android:scaleType="centerCrop"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingLeft="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Kebap Mixto de la Casa"
-                            android:textSize="18sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1,85 €"
-                            android:textSize="14sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pollo crujiente con salsa mayo y lechuga"
-                            android:textSize="14sp"/>
-                    </LinearLayout>
-
-                    <ImageButton
-                        android:id="@+id/addToCartButton5"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@android:drawable/ic_input_add"
-                        android:background="?android:attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="@string/add_to_cart"/>
-                </LinearLayout>
+                        android:text="18,50 €"
+                        android:textSize="14sp"/>
 
-                <!-- Elemento de menú 2 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/background_item_selector"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:id="@+id/foto6"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/foto6"
-                        android:scaleType="centerCrop"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingLeft="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Albondigas de Merluza"
-                            android:textSize="18sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1,85 €"
-                            android:textSize="14sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pollo crujiente con salsa mayo y lechuga"
-                            android:textSize="14sp"/>
-                    </LinearLayout>
-
-                    <ImageButton
-                        android:id="@+id/addToCartButton6"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@android:drawable/ic_input_add"
-                        android:background="?android:attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="@string/add_to_cart"/>
+                        android:text="Pizza familiar de ingredientes al gusto"
+                        android:textSize="14sp"/>
                 </LinearLayout>
 
-                <!-- Elemento de menú 2 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <ImageButton
+                    android:id="@+id/addToCartButton7"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/background_item_selector"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="8dp">
+                    android:src="@android:drawable/ic_input_add"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/add_to_cart"/>
+            </LinearLayout>
 
-                    <ImageView
-                        android:id="@+id/foto7"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/foto7"
-                        android:scaleType="centerCrop"/>
+            <!-- Elemento de menú 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#FFF3E0"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp">
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingLeft="8dp">
+                <ImageView
+                    android:id="@+id/foto8"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/foto8"
+                    android:scaleType="centerCrop"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Chicken Mayo"
-                            android:textSize="18sp"
-                            android:textStyle="bold"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="8dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1,85 €"
-                            android:textSize="14sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pollo crujiente con salsa mayo y lechuga"
-                            android:textSize="14sp"/>
-                    </LinearLayout>
-
-                    <ImageButton
-                        android:id="@+id/addToCartButton7"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@android:drawable/ic_input_add"
-                        android:background="?android:attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="@string/add_to_cart"/>
-                </LinearLayout>
+                        android:text="Tartar de salmón ahumado"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
 
-                <!-- Elemento de menú 2 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/background_item_selector"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:id="@+id/foto8"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/foto8"
-                        android:scaleType="centerCrop"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingLeft="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Plato de la casa"
-                            android:textSize="18sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1,85 €"
-                            android:textSize="14sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pollo crujiente con salsa mayo y lechuga"
-                            android:textSize="14sp"/>
-                    </LinearLayout>
-
-                    <ImageButton
-                        android:id="@+id/addToCartButton8"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@android:drawable/ic_input_add"
-                        android:background="?android:attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="@string/add_to_cart"/>
+                        android:text="16,85 €"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tartar de salmon ahumado con el toque del chef"
+                        android:textSize="14sp"/>
                 </LinearLayout>
 
+                <ImageButton
+                    android:id="@+id/addToCartButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_input_add"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/add_to_cart"/>
             </LinearLayout>
 
         </LinearLayout>
+    </ScrollView>
 
-    </RelativeLayout>
-
+</RelativeLayout>

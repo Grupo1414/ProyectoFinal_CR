@@ -103,7 +103,7 @@
         android:layout_height="wrap_content"
         android:text="Guardar"
         android:textColor="#FFFFFF"
-        android:background="@drawable/button_rounden_orange"
+        android:background="@drawable/button_rounded_orange"
         android:layout_above="@id/buttonConfirm"
         android:layout_marginBottom="10dp"
         android:textSize="18sp"/>
@@ -116,7 +116,7 @@
         android:text="Confirmar"
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
-        android:background="@drawable/button_rounden_orange"
+        android:background="@drawable/button_rounded_orange"
         android:textColor="@color/black"
         android:textSize="18sp"/>
 </RelativeLayout>

@@ -2,23 +2,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="#FFF3E0">
 
     <!-- Encabezado -->
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#1a1a1a"
+        android:background="#FFF3E0"
         android:padding="16dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Entrega: Calle Francisco Javier de Moya"
-            android:textColor="#ffffff"
-            android:textSize="18sp" />
+            android:text="            ¡Aquí tienes tu pedido!"
+            android:textStyle="bold"
+            android:background="#FFF3E0"
+            android:textSize="24sp"/>
         <!-- Agrega más detalles del encabezado si es necesario -->
     </LinearLayout>
 
@@ -28,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/footer"
-        android:background="#CDDC39"
+        android:background="@drawable/button_rounded_orange"
         android:text="Añadir artículos"
         android:textColor="@color/black"
         android:layout_marginBottom="16dp"/>
@@ -41,7 +42,7 @@
         android:layout_height="0dp"
         android:layout_above="@id/button_add_more_items"
         android:layout_below="@id/header"
-        android:background="#000000"
+        android:background="#FFF3E0"
         android:divider="@android:color/transparent"
         android:dividerHeight="8dp" />
 
@@ -51,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#1a1a1a"
+        android:background="#FFF3E0"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -59,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Subtotal"
-            android:textColor="#ffffff"
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -67,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="12,06 €"
-            android:textColor="#ffffff"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:gravity="end"/>
 
@@ -75,7 +76,7 @@
             android:id="@+id/checkout_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#CDDC39"
+            android:background="@drawable/button_rounded_orange"
             android:text="Pagar"
             android:textColor="@color/black" />
     </LinearLayout>

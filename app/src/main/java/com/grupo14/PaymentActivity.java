@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PaymentActivity extends AppCompatActivity {
@@ -19,11 +21,18 @@ public class PaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-        // Inicializa los componentes de la UI
+
+        // EditText y boton de pagar y variable del Alias de la tarjeta
         editTextAddress = findViewById(R.id.editText_address);
         Button buttonSaveAddress = findViewById(R.id.button_edit_address);
         Button addCardButton = findViewById(R.id.button_add_credit_card);
         Button buttonPay = findViewById(R.id.button_pay);
+        String alias = getIntent().getStringExtra("ALIAS");
+
+        //Enseña el alias de la tarjeta que hemos puesto en activity_payment
+        // Mostrar el alias en el TextView
+        TextView textViewSelectedCard = findViewById(R.id.textView_selected_card);
+        textViewSelectedCard.setText("Tarjeta Alias seleccionada: " + alias);
 
         // Evento de clic para guardar la dirección
         buttonSaveAddress.setOnClickListener(new View.OnClickListener() {
@@ -35,13 +44,13 @@ public class PaymentActivity extends AppCompatActivity {
             }
         });
 
-        // Configura el botón para añadir tarjeta
+        // Nos lleva a meter la tarjeta de credito
         addCardButton.setOnClickListener(v -> {
             Intent intent = new Intent(PaymentActivity.this, AddCardActivity.class);
             startActivity(intent);
         });
 
-        // Evento de clic para editar la dirección
+        //Nos permite meter la dirección
         buttonSaveAddress.setOnClickListener(v -> {
             if (!editTextAddress.isFocused()) {
                 editTextAddress.requestFocus();
@@ -50,7 +59,7 @@ public class PaymentActivity extends AppCompatActivity {
             }
         });
 
-        // Evento de clic para pagar
+        // Boton de pagar que nos lleva a pagar2
         buttonPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,11 +69,9 @@ public class PaymentActivity extends AppCompatActivity {
         });
     }
 
-    // Método para guardar la dirección fuera del método onCreate
+    // FALTA GUARDAR posiblemente en base de datos
     private void saveAddress(String address) {
-        // Por ahora, solo guardamos la dirección en una variable.
-        // Aquí es donde implementarías el guardado en Firebase más adelante.
-        // Muestra la dirección para verificar que se haya guardado
+
         System.out.println("Dirección guardada: " + address);
     }
 }

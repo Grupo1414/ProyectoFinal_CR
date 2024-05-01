@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#FFFFFF">
+    android:background="#FFF3E0">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:hint="Dirección de entrega"
             android:inputType="textPostalAddress"
-            android:background="@drawable/edit_text_background"
+            android:background="@drawable/background_item_selector"
             android:padding="12dp"
             android:textSize="16sp"
             android:layout_marginBottom="16dp" />
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="Guardar"
             android:textColor="@color/black"
-            android:background="#CDDC39"
+            android:background="@drawable/button_rounded_orange"
             android:layout_marginBottom="24dp" />
 
         <!-- Tiempo Estimado de Entrega -->
@@ -96,21 +96,31 @@
             android:entries="@array/payment_methods"
             android:layout_marginBottom="16dp" />
 
+        <TextView
+            android:id="@+id/textView_selected_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alias tarjeta"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_centerInParent="true"/>
+
+
         <Button
             android:id="@+id/button_add_credit_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Añadir tarjeta"
             android:textColor="@color/black"
-            android:background="#CDDC39"
-            android:layout_marginBottom="16dp" />
+            android:background="@drawable/button_rounded_orange"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="15dp"/>
         <Button
             android:id="@+id/button_pay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pagar"
             android:textColor="@color/black"
-            android:background="#CDDC39"
+            android:background="@drawable/button_rounded_orange"
             android:layout_marginBottom="16dp" />
 
         <!-- Espacio adicional para más elementos si es necesario -->
