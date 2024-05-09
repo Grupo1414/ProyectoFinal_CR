@@ -9,10 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class ProductDetailActivity extends AppCompatActivity {
 
-    // Hacer la lista de cartItems estática para mantener su estado a través de las instancias de la actividad
     private static List<String> cartItems = new ArrayList<>();
 
     @Override
@@ -20,47 +18,45 @@ public class ProductDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
 
+
+        //Relacionamos la variable con las id del layaout
         ImageView productImage = findViewById(R.id.image_product);
         TextView productTitle = findViewById(R.id.text_product_title);
         TextView productDescription = findViewById(R.id.text_product_description);
         TextView productPrice = findViewById(R.id.text_product_price);
+        Button addToCartButton = findViewById(R.id.button_add_to_cart);
+        Button goBackButton = findViewById(R.id.button_go_back);
 
-        // Obtener los extras del Intent
+        // Configurar la vista con la información del producto
         String imageResourceName = getIntent().getStringExtra("imageResourceName");
         String title = getIntent().getStringExtra("productTitle");
         String description = getIntent().getStringExtra("productDescription");
         String price = getIntent().getStringExtra("productPrice");
-
-        // Configurar los elementos de la vista
         int imageResourceId = getResources().getIdentifier(imageResourceName, "drawable", getPackageName());
+
         productImage.setImageResource(imageResourceId);
         productTitle.setText(title);
         productDescription.setText(description);
         productPrice.setText(price);
 
-
-
-        //Boton para Añadir al carrito la comida
-
-        Button addToCartButton = findViewById(R.id.button_add_to_cart);
+        // Configurar el botón Añadir al carrito
         addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Obtén los detalles del producto de la interfaz de usuario o del Intent.
-                String productTitle = getIntent().getStringExtra("productTitle");
-                String productDescription = getIntent().getStringExtra("productDescription");
-                String productPrice = getIntent().getStringExtra("productPrice");
-
-                // Crea un formato para la lista del carrito, por ejemplo: "Chicken Burger BBQ - 1,55€"
-                String cartItem = productTitle + " - " + productPrice;
-
-                // Añadir el producto al carrito
+                String cartItem = productTitle.getText().toString() + " - " + productPrice.getText().toString();
                 cartItems.add(cartItem);
-
-                // Inicia el carro con la lista completa de la comida en el carrito
                 Intent intent = new Intent(ProductDetailActivity.this, CartActivity.class);
                 intent.putStringArrayListExtra("cartItems", new ArrayList<>(cartItems));
                 startActivity(intent);
+            }
+        });
+
+        // Configurar el botón Volver
+        goBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Simplemente termina la actividad actual, volviendo a la anterior en el stack
+                finish();
             }
         });
     }

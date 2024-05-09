@@ -46,4 +46,12 @@
         android:layout_marginTop="24dp"
         android:text="Añadir al pedido" />
 
+    <Button
+        android:id="@+id/button_go_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Volver" />
+
+
 </LinearLayout>

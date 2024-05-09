@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 public class AddCardActivity extends AppCompatActivity {
 
+    //Variables de los textos
     private EditText editTextAlias;
     private TextView textViewSelectedCard;
 
@@ -35,7 +36,7 @@ public class AddCardActivity extends AppCompatActivity {
     private void guardarTarjeta() {
         // Aquí deberías implementar la lógica para guardar la tarjeta con el alias en tu base de datos o donde corresponda
 
-        // Mostrar el diálogo emergente
+        //Método que te dice que está guardada
         mostrarDialogo();
 
         // Mostrar el TextView después de guardar la tarjeta
@@ -46,6 +47,7 @@ public class AddCardActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //Método que te dice que está guardada
     private void mostrarDialogo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("La tarjeta con el alias '" + editTextAlias.getText().toString() + "' se ha guardado correctamente.")

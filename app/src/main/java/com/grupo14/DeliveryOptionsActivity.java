@@ -32,20 +32,17 @@ public class DeliveryOptionsActivity extends AppCompatActivity {
             int selectedId = optionsContainer.getCheckedRadioButtonId();
             Intent intent;
 
-            // Reemplaza "DeliveryActivity.class", "PickupActivity.class" y "DineInActivity.class" con las clases de tus actividades reales.
-            if (selectedId == radioButtonDelivery.getId()) {
+            if (selectedId == radioButtonPickup.getId()) {
+                intent = new Intent(DeliveryOptionsActivity.this, PickupActivity.class);
+                intent.putStringArrayListExtra("cartItems", getIntent().getStringArrayListExtra("cartItems")); // Asegúrate de tener los items disponibles aquí
+                startActivity(intent);
+            } else if (selectedId == radioButtonDelivery.getId()) {
                 intent = new Intent(DeliveryOptionsActivity.this, PaymentActivity.class);
-            } else if (selectedId == radioButtonPickup.getId()) {
-                intent = new Intent(DeliveryOptionsActivity.this, recoger.class);
+                startActivity(intent);
             } else if (selectedId == radioButtonDineIn.getId()) {
                 intent = new Intent(DeliveryOptionsActivity.this, comerAqui.class);
-            } else {
-                // Si no se seleccionó ninguna opción, puedes optar por no hacer nada
-                // o mostrar un mensaje al usuario, o simplemente seleccionar una opción por defecto
-                return;
+                startActivity(intent);
             }
-
-            startActivity(intent);
         });
 
     }

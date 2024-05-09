@@ -13,7 +13,7 @@ public class CartaPrincipal extends AppCompatActivity {
     private List<String> cart = new ArrayList<>();
 
 
-    // Método para abrir ProductDetailActivity
+
     // Método para abrir ProductDetailActivity con todos los datos del producto
     private void openProductDetail(String imageResourceName, String title, String description, String precio) {
         Intent intent = new Intent(CartaPrincipal.this, ProductDetailActivity.class);
@@ -39,6 +39,7 @@ public class CartaPrincipal extends AppCompatActivity {
     }
 
 
+    //Aquí le metemos toda la información a los productos
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

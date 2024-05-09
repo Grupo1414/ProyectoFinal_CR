@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <meta-data
         android:name="com.google.android.geo.API_KEY"
-        android:value="tu_api_key"/>
-
-
+        android:value="tu_api_key" />
 
     <application
         android:allowBackup="true"
@@ -47,6 +46,9 @@
             android:name=".PaymentActivity"
             android:theme="@style/Theme.Grupo14" />
         <activity
+            android:name=".PickupActivity"
+            android:theme="@style/Theme.Grupo14" />
+        <activity
             android:name=".CartAdapter"
             android:theme="@style/Theme.Grupo14" />
         <activity
@@ -57,9 +59,6 @@
             android:theme="@style/Theme.Grupo14" />
         <activity
             android:name=".comerAqui"
-            android:theme="@style/Theme.Grupo14" />
-        <activity
-            android:name=".recoger"
             android:theme="@style/Theme.Grupo14" />
         <activity
             android:name=".ProductDetailActivity"

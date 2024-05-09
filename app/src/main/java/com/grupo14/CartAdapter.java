@@ -63,6 +63,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         }
     }
 
+    //Método para borrar algún elemento del carrito
     private void showDeleteConfirmationDialog(int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("¿Estás seguro de querer eliminar este ítem del carrito?");
@@ -74,6 +75,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                 notifyItemRangeChanged(position, cartItems.size());
             }
         });
+        //Boton de cancelar la eliminación
         builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // Usuario canceló la operación, no hay que hacer nada
