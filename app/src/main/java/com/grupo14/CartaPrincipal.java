@@ -6,11 +6,15 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
+
+import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class CartaPrincipal extends AppCompatActivity {
 
     private List<String> cart = new ArrayList<>();
+
 
 
 
@@ -57,8 +61,9 @@ public class CartaPrincipal extends AppCompatActivity {
         setupProductButton(R.id.addToCartButton8, "foto8", "Tartar de salmón ahumado", "Fino tartar de salmón ahumado, preparado con cebolla roja, alcaparras y un toque de eneldo fresco. Aliñado con aceite de oliva extra virgen y jugo de limón, este plato se presenta con elegancia y es ideal para los amantes de los sabores delicados y frescos del mar.", "16,85 €");
 
 
-        //Botones de AÑADIR CARRITO
+        //Botones de AÑADIR CARRITO y Carrito
 
+        ImageView imageViewCart = findViewById(R.id.imageViewCart);
         ImageButton addToCartButton1 = findViewById(R.id.addToCartButton1);
         ImageButton addToCartButton2 = findViewById(R.id.addToCartButton2);
         ImageButton addToCartButton3 = findViewById(R.id.addToCartButton3);
@@ -68,6 +73,14 @@ public class CartaPrincipal extends AppCompatActivity {
         ImageButton addToCartButton7 = findViewById(R.id.addToCartButton7);
         ImageButton addToCartButton8 = findViewById(R.id.addToCartButton8);
 
+        imageViewCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Crea un Intent para iniciar CartActivity
+                Intent intent = new Intent(getApplicationContext(), CartActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class CartActivity extends AppCompatActivity {
+
+    //Variables
     private RecyclerView recyclerView;
     private TextView subtotalTextView;
     private Button payButton, addButton;
@@ -25,10 +27,13 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
+
+        //Relacionamos las variables con el xml
         recyclerView = findViewById(R.id.cart_items_list);
         subtotalTextView = findViewById(R.id.subtotal_price);
         payButton = findViewById(R.id.checkout_button);
         addButton = findViewById(R.id.button_add_more_items);
+
 
         cartItems = getIntent().getStringArrayListExtra("cartItems");
         if (cartItems == null) {
@@ -53,6 +58,7 @@ public class CartActivity extends AppCompatActivity {
         });
     }
 
+    //Metodo para ver el total del carrito
     private void calculateSubtotal() {
         subtotal = 0.0;
         for (String item : cartItems) {

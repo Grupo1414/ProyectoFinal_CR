@@ -22,7 +22,7 @@ public class PaymentActivity2 extends AppCompatActivity {
         imageViewRedsys = findViewById(R.id.imageViewRedsys);
         cardViewThankYou = findViewById(R.id.cardViewThankYou);
 
-        // Handler para retrasar la aparición del CardView
+        // Retraso de 6 segundos para pagar el redsys
         new Handler().postDelayed(() -> cardViewThankYou.setVisibility(View.VISIBLE), 6000); // 6 segundos
     }
 }

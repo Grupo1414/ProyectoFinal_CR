@@ -39,7 +39,7 @@ public class AddCardActivity extends AppCompatActivity {
         //Método que te dice que está guardada
         mostrarDialogo();
 
-        // Mostrar el TextView después de guardar la tarjeta
+        // Mostrar el mensaje para avisar de que se ha guardado
         textViewSelectedCard.setText("Tarjeta Alias seleccionada: " + editTextAlias.getText().toString());
 
         // Navegar a la siguiente actividad

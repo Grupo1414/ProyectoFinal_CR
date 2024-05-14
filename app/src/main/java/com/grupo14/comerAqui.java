@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 public class comerAqui extends AppCompatActivity {
 
+    //Variables
     private EditText editTextName;
     private Spinner spinnerTables;
     private Button buttonConfirm, buttonSave;
@@ -22,8 +23,10 @@ public class comerAqui extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comer_aqui); // Asegúrate de usar el layout correcto.
+        setContentView(R.layout.activity_comer_aqui);
 
+
+        //Relacionamos las variables con el layaout xml
         editTextName = findViewById(R.id.editTextName);
         spinnerTables = findViewById(R.id.spinnerTables);
         buttonConfirm = findViewById(R.id.buttonConfirm);
@@ -31,6 +34,7 @@ public class comerAqui extends AppCompatActivity {
 
         setupTables(); // Configurar los listeners para las mesas
 
+        //Boton para guardar la mesa
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +59,7 @@ public class comerAqui extends AppCompatActivity {
         });
     }
 
+    //Método para escoger una mesa
     private void setupTables() {
         for (int i = 0; i < tables.length; i++) {
             tables[i] = findViewById(tableIds[i]);

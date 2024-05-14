@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DeliveryOptionsActivity extends AppCompatActivity {
 
+    //Variables
     private RadioGroup optionsContainer;
     private RadioButton radioButtonDelivery;
     private RadioButton radioButtonPickup;
@@ -21,13 +22,15 @@ public class DeliveryOptionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_options); // Asegúrate de que este sea el nombre correcto de tu layout XML.
 
-        // Inicializa los componentes de la UI
+        // Relacionamos las variables con el xml
         optionsContainer = findViewById(R.id.options_container);
         radioButtonDelivery = findViewById(R.id.radioButtonDelivery);
         radioButtonPickup = findViewById(R.id.radioButtonPickup);
         radioButtonDineIn = findViewById(R.id.radioButtonDineIn);
         buttonContinue = findViewById(R.id.buttonContinue);
 
+
+        //Configuramos el boton según la opcion de los radioboton que escojamos
         buttonContinue.setOnClickListener(v -> {
             int selectedId = optionsContainer.getCheckedRadioButtonId();
             Intent intent;
@@ -47,5 +50,3 @@ public class DeliveryOptionsActivity extends AppCompatActivity {
 
     }
 }
-
-//  PaymentActivity.class);

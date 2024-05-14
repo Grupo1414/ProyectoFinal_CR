@@ -2,8 +2,9 @@ package com.grupo14;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,23 +14,21 @@ public class PaymentActivity extends AppCompatActivity {
     private TextView textViewSelectedCard, subtotalTextView;
     private double subtotal = 0.0; // Este valor ahora será obtenido del intent
 
+    private Spinner ProgramarComida;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
         // Inicialización de las vistas
-        textViewSelectedCard = findViewById(R.id.textView_selected_card);
         subtotalTextView = findViewById(R.id.subtotal_price);
         Button addCardButton = findViewById(R.id.button_add_credit_card);
         Button buttonPay = findViewById(R.id.button_pay);
+        Button buttonBackToCart = findViewById(R.id.VolverCarrito); // Agrega el ID correcto si es diferente
 
-        // Obtener el alias y subtotal desde el intent
-        String alias = getIntent().getStringExtra("ALIAS");
+        // Obtener el subtotal desde el intent
         subtotal = getIntent().getDoubleExtra("SUBTOTAL", 0.0);
-
-        // Establecer el texto del alias de la tarjeta seleccionada
-        textViewSelectedCard.setText("Tarjeta Alias seleccionada: " + (alias != null ? alias : "Ninguna"));
 
         // Establecer el subtotal en el TextView
         subtotalTextView.setText(String.format("%.2f €", subtotal));
@@ -45,5 +44,19 @@ public class PaymentActivity extends AppCompatActivity {
             Intent intent = new Intent(PaymentActivity.this, PaymentActivity2.class);
             startActivity(intent);
         });
+
+        // Listener para el botón "Volver al carrito"
+        buttonBackToCart.setOnClickListener(v -> {
+            // Navega de regreso a CartActivity
+            Intent intent = new Intent(PaymentActivity.this, CartActivity.class);
+            startActivity(intent);
+        });
+
+        // Spinner de "Programar Comida"
+        ProgramarComida = findViewById(R.id.spinner_schedule_time);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.pickup_times, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ProgramarComida.setAdapter(adapter);
     }
 }

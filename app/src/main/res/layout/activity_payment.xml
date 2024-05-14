@@ -42,23 +42,33 @@
                 android:id="@+id/radio_priority"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Prioridad (Entre 25 y 40 min)"
+                android:text="Prioridad (Entre 5 y 10 min)"
                 android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/radio_standard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Estándar (Entre 30 y 45 min)"
+                android:text="Estándar (Entre 10 y 20 min)"
                 android:textSize="16sp"
                 android:checked="true" />
 
-            <RadioButton
-                android:id="@+id/radio_schedule"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Programar"
-                android:textSize="16sp" />
+                android:text="Programar Pedido"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/spinner_schedule_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/pickup_times" />
+
         </RadioGroup>
 
         <!-- Método de Pago -->
@@ -78,13 +88,6 @@
             android:entries="@array/payment_methods"
             android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:id="@+id/textView_selected_card"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alias tarjeta"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:layout_centerInParent="true"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -123,8 +126,14 @@
             android:background="@drawable/button_rounded_orange"
             android:layout_marginBottom="16dp" />
 
-        <!-- Espacio adicional para más elementos si es necesario -->
-        <!-- ... -->
+        <Button
+            android:id="@+id/VolverCarrito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver al carrito"
+            android:textColor="@color/black"
+            android:background="@drawable/button_rounded_orange"
+            android:layout_marginBottom="16dp" />
 
     </LinearLayout>
 </ScrollView>

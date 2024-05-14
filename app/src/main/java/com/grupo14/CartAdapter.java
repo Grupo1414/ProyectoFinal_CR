@@ -51,7 +51,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         return cartItems.size();
     }
 
-    // ViewHolder class
+    // Clase para Borrar del carrito con la X
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView myTextView;
         ImageButton deleteButton; // Botón de eliminar

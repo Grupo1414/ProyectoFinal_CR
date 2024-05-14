@@ -4,36 +4,47 @@
     android:layout_height="match_parent"
     android:background="#FFF3E0">
 
+
+
     <!-- Cabecera -->
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:padding="16dp"
         android:background="?attr/colorPrimary"
         android:gravity="center">
 
-        <!-- Logo y texto de la cabecera aquí -->
         <TextView
+            android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Restaurante RamonCrisJose"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:layout_gravity="center"
-            android:paddingBottom="8dp"/>
+            android:layout_centerHorizontal="true"/>
 
-        <!-- Texto "Carta" debajo del nombre del restaurante -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nuestra Carta"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textStyle="italic"
-            android:layout_gravity="center"
-            android:paddingBottom="16dp"/>
+            android:layout_below="@id/textViewTitle"
+            android:layout_centerHorizontal="true"/>
 
-    </LinearLayout>
+        <!-- Icono del carrito en la esquina superior derecha -->
+        <ImageView
+            android:id="@+id/imageViewCart"
+            android:layout_width="94dp"
+            android:layout_height="68dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="1dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_cart" />
+    </RelativeLayout>
 
     <!-- Lista de artículos de comida -->
     <ScrollView
@@ -102,7 +113,6 @@
                     android:contentDescription="@string/add_to_cart"/>
             </LinearLayout>
 
-            <!-- Elemento de menú 2 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -469,8 +479,8 @@
                     android:src="@android:drawable/ic_input_add"
                     android:background="?android:attr/selectableItemBackgroundBorderless"
                     android:contentDescription="@string/add_to_cart"/>
-            </LinearLayout>
 
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
