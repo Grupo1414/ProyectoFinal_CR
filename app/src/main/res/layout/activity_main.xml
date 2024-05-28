@@ -8,22 +8,22 @@
     android:padding="40dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="25dp"
-        android:textColor="@color/white"
-        android:text="Welcome Back"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="50dp"
-        android:textColor="@color/white"
-        android:text="Log In!"/>
+        android:text="Bienvenido"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="              a Esquina 22"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="Contraseña"
             android.inputType="textPassword"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:text="sign_in"
+        android:text="Ingresa"
         android:layout_marginTop="100dp"
         android:background="@drawable/round_btn"/>
 
@@ -76,14 +76,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dont have an account?"
+            android:text="No tienes una cuenta?"
             android:textSize="15dp"
             android:textStyle="bold"/>
         <TextView
             android:id="@+id/sign_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
+            android:text="Registro"
             android:textStyle="bold"
             android:textSize="15dp"
             android:textColor="@color/blue"

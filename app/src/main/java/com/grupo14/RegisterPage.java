@@ -55,11 +55,11 @@ public class RegisterPage extends AppCompatActivity {
                 password=String.valueOf(editTextPassword.getText());
 
                 if(TextUtils.isEmpty(email)){
-                    Toast.makeText(RegisterPage.this, "Enter Email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterPage.this, "Introduce email", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(TextUtils.isEmpty(password)){
-                    Toast.makeText(RegisterPage.this, "Enter Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterPage.this, "Introduce contraseña", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -68,13 +68,13 @@ public class RegisterPage extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
-                                    Toast.makeText(RegisterPage.this, "Registratios successful", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterPage.this, "Registro correcto", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(RegisterPage.this, MainActivity.class);
                                     startActivity(intent);
                                     //finish();
                                 }
                                 else{
-                                    Toast.makeText(RegisterPage.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterPage.this, "Fallo de registro", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

@@ -2,6 +2,12 @@
     <string name="app_name">Proyecto_final_CRJ</string>
     <string name="add_to_cart">Añadir al carrito</string>
     <string name="delete_item">Eliminar ítem</string>
+    <string name="gracias_por_su_compra_en_breve_entregaremos_su_pedido">Gracias por su compra, en breve entregaremos su pedido</string>
+    <string name="pasarelapago1">pasarelaPAgo1</string>
+    <string name="restaurante_ramoncrisjose">Restaurante RamonCrisJose</string>
+    <string name="nuestra_carta">Nuestra Carta</string>
+    <!-- En strings.xml -->
+    <string name="firebase_database_url">https://grupo14-252f0-default-rtdb.europe-west1.firebasedatabase.app</string>
     <string-array name="delivery_options">
         <item>Estándar</item>
         <item>Preferente</item>

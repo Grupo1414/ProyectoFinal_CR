@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/direccion_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dirección"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/numero_tarjeta_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Número de Tarjeta"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/nombre_tarjeta_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de Tarjeta"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/hora_programada_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hora Programada"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/subtotal_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subtotal"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/user_id_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User ID"
+        android:textSize="16sp"
+        android:visibility="gone" />
+</LinearLayout>

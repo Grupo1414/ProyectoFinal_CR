@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         signIn=findViewById(R.id.sign_in);
         signUp=findViewById(R.id.sign_up);
 
-        //funcion para registrar nuevo usuario
+        //Redireccion para registrar nuevo usuario
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,11 +56,11 @@ public class MainActivity extends AppCompatActivity {
                 password=String.valueOf(editTextPassword.getText());
 
                 if(TextUtils.isEmpty(email)){
-                    Toast.makeText(MainActivity.this, "Enter Email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Introduce email", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(TextUtils.isEmpty(password)){
-                    Toast.makeText(MainActivity.this, "Enter Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Introduce contraseña", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 firebaseAuth.signInWithEmailAndPassword(email,password)
@@ -68,13 +68,14 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
-                                    Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, "Login correcta", Toast.LENGTH_SHORT).show();
+                                    //Si el login es correcto se va a la pantalla principal
                                     Intent intent = new Intent(MainActivity.this, CartaPrincipal.class);
                                     startActivity(intent);
                                     //finish();
                                 }
                                 else{
-                                    Toast.makeText(MainActivity.this, "Authentication Failed.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, "Login incorrecto", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

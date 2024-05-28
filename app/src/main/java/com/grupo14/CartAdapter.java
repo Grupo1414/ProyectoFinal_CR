@@ -7,82 +7,107 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
-    private List<String> cartItems;
+    private List<Carrito> carritoItems;
     private LayoutInflater mInflater;
-    private Context context; // Contexto para usar en la creación del AlertDialog
+    private Context context;
+    private CartActivity cartActivity;
+    private FirebaseUser currentUser;
 
-    // Constructor
-    public CartAdapter(Context context, List<String> cartItems) {
+    public CartAdapter(Context context, List<Carrito> carritoItems) {
         this.mInflater = LayoutInflater.from(context);
-        this.cartItems = cartItems;
-        this.context = context; // Guardamos el contexto
+        this.carritoItems = carritoItems;
+        this.context = context;
+        this.cartActivity = (CartActivity) context;
+        this.currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        // Verificar si el usuario está autenticado
+        if (currentUser == null) {
+            throw new IllegalStateException("Debes iniciar sesión para gestionar el carrito");
+        }
     }
 
     @NonNull
     @Override
-    public CartAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.item_cart, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartAdapter.ViewHolder holder, int position) {
-        String item = cartItems.get(position);
-        holder.myTextView.setText(item);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Carrito item = carritoItems.get(position);
+        holder.myTextView.setText(item.getNombre() + " - " + item.getCantidad() + " - " + item.getPrecio() + " €");
 
         holder.deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDeleteConfirmationDialog(position);
+                int adapterPosition = holder.getAdapterPosition();
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    showDeleteConfirmationDialog(adapterPosition);
+                }
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return cartItems.size();
+        return carritoItems.size();
     }
 
-    // Clase para Borrar del carrito con la X
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView myTextView;
-        ImageButton deleteButton; // Botón de eliminar
+        ImageButton deleteButton;
 
         ViewHolder(View itemView) {
             super(itemView);
             myTextView = itemView.findViewById(R.id.item_text);
-            deleteButton = itemView.findViewById(R.id.delete_button); // Inicializar el botón de eliminar
+            deleteButton = itemView.findViewById(R.id.delete_button);
         }
     }
 
-    //Método para borrar algún elemento del carrito
     private void showDeleteConfirmationDialog(int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("¿Estás seguro de querer eliminar este ítem del carrito?");
         builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                // Usuario confirmó que quiere eliminar el ítem
-                cartItems.remove(position);
-                notifyItemRemoved(position);
-                notifyItemRangeChanged(position, cartItems.size());
+                Carrito item = carritoItems.get(position);
+
+                // Verificar si currentUser no es nulo antes de usarlo
+                if (currentUser != null) {
+                    DatabaseReference cartRef = FirebaseDatabase.getInstance("https://grupo14-252f0-default-rtdb.europe-west1.firebasedatabase.app")
+                            .getReference("carritos")
+                            .child(currentUser.getUid())
+                            .child(item.getId());
+                    cartRef.removeValue();
+                    carritoItems.remove(position);
+                    notifyItemRemoved(position);
+                    notifyItemRangeChanged(position, carritoItems.size());
+                    cartActivity.updateTotalPrice();  // Actualizar el total del precio
+                } else {
+                    Toast.makeText(context, "Error: usuario no autenticado", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-        //Boton de cancelar la eliminación
         builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                // Usuario canceló la operación, no hay que hacer nada
                 dialog.dismiss();
             }
         });
-
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
