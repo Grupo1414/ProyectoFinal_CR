@@ -67,21 +67,6 @@ public class PaymentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 guardarPedido();
-
-                // Redireccionar a PasarelaPago
-                Intent intentPasarelaPago = new Intent(PaymentActivity.this, PasarelaPago.class);
-                startActivity(intentPasarelaPago);
-
-                // Retrasar la redirección a CartaPrincipal
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent intentCartaPrincipal = new Intent(PaymentActivity.this, CartaPrincipal.class);
-                        startActivity(intentCartaPrincipal);
-
-                        finish();
-                    }
-                }, 5000); // 5000 milisegundos = 5 segundos
             }
         });
     }
@@ -95,9 +80,17 @@ public class PaymentActivity extends AppCompatActivity {
         String horaProgramada = spinnerHoraProgramada.getSelectedItem().toString();
 
         // Validar los campos
-        if (direccion.isEmpty() || numeroTarjeta.isEmpty() || nombreTarjeta.isEmpty() || horaProgramada.isEmpty()) {
+        if (direccion.isEmpty() || horaProgramada.isEmpty()) {
             Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show();
             return;
+        }
+
+        // Validar campos de tarjeta si son visibles
+        if (numeroTarjetaEditText.getVisibility() == View.VISIBLE || nombreTarjetaEditText.getVisibility() == View.VISIBLE) {
+            if (numeroTarjeta.isEmpty() || nombreTarjeta.isEmpty()) {
+                Toast.makeText(this, "Por favor, completa todos los campos de la tarjeta", Toast.LENGTH_SHORT).show();
+                return;
+            }
         }
 
         // Verificar el valor de subtotal
@@ -125,9 +118,21 @@ public class PaymentActivity extends AppCompatActivity {
 
                     // Mostrar un mensaje de éxito y redirigir
                     Toast.makeText(PaymentActivity.this, "Pedido realizado con éxito", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(PaymentActivity.this, PasarelaPago.class); // Redirigir a la actividad principal o una nueva actividad de confirmación
-                    startActivity(intent);
-                    finish();
+
+                    // Redireccionar a PasarelaPago
+                    Intent intentPasarelaPago = new Intent(PaymentActivity.this, PasarelaPago.class);
+                    startActivity(intentPasarelaPago);
+
+                    // Retrasar la redirección a CartaPrincipal
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intentCartaPrincipal = new Intent(PaymentActivity.this, CartaPrincipal.class);
+                            startActivity(intentCartaPrincipal);
+
+                            finish();
+                        }
+                    }, 5000); // 5000 milisegundos = 5 segundos
                 }
             });
         } else {

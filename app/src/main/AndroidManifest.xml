@@ -12,14 +12,14 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/icono"
-        android:label="@string/app_name"
+        android:label="Grupo 14"
         android:roundIcon="@drawable/icono"
         android:supportsRtl="true"
         tools:targetApi="31">
 
         <!-- Actividad principal -->
         <activity
-            android:name=".Login.MainActivity"
+            android:name=".Login.Login"
             android:theme="@style/AppTheme"
             android:exported="true">
 

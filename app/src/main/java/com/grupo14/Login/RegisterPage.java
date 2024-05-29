@@ -40,7 +40,7 @@ public class RegisterPage extends AppCompatActivity {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(RegisterPage.this, MainActivity.class);
+                Intent intent= new Intent(RegisterPage.this, Login.class);
                 startActivity(intent);
                 //finish();
             }
@@ -68,7 +68,7 @@ public class RegisterPage extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
                                     Toast.makeText(RegisterPage.this, "Registro correcto", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(RegisterPage.this, MainActivity.class);
+                                    Intent intent = new Intent(RegisterPage.this, Login.class);
                                     startActivity(intent);
                                     //finish();
                                 }
