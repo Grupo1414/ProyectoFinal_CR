@@ -1,4 +1,4 @@
-package com.grupo14;
+package com.grupo14.Carta;
 
 public class Producto {
     private String title;

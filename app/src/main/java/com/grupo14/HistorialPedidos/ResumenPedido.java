@@ -1,4 +1,6 @@
-package com.grupo14;
+package com.grupo14.HistorialPedidos;
+
+import com.grupo14.Carrito.Carrito;
 
 import java.util.ArrayList;
 
@@ -9,12 +11,13 @@ public class ResumenPedido {
     private String horaProgramada;
     private double subtotal;
     private ArrayList<Carrito> carrito;
-    private String userId; // Nuevo campo para el ID del usuario
+    private String userId;
 
     public ResumenPedido() {
         // Constructor vacío requerido por Firebase
     }
 
+    // Constructor para el resumen de pedido
     public ResumenPedido(String direccion, String numeroTarjeta, String nombreTarjeta, String horaProgramada, double subtotal, ArrayList<Carrito> carrito, String userId) {
         this.direccion = direccion;
         this.numeroTarjeta = numeroTarjeta;

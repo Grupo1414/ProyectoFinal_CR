@@ -1,4 +1,4 @@
-package com.grupo14;
+package com.grupo14.Carta;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,10 +8,15 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.grupo14.Carrito.CartActivity;
+import com.grupo14.HistorialPedidos.ResumenPedidosActivity;
+import com.grupo14.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CartaPrincipal extends AppCompatActivity {
+    // Lista para almacenar los productos en el carrito
     private List<String> cart = new ArrayList<>();
 
     // Método para abrir DetalleProducto con todos los datos del producto
@@ -24,7 +29,7 @@ public class CartaPrincipal extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // Rellena los objetos individualmente
+    // Método para configurar los botones de AÑADIR CARRITO
     private void setupProductButton(int buttonId, String imageName, String title, String description, String precio) {
         ImageButton button = findViewById(buttonId);
         button.setOnClickListener(v -> {
@@ -32,7 +37,7 @@ public class CartaPrincipal extends AppCompatActivity {
             intent.putExtra("imageResourceName", imageName);
             intent.putExtra("productTitle", title);
             intent.putExtra("productDescription", description);
-            intent.putExtra("productPrice", precio); // Cambiado a productPrice para mantener la consistencia
+            intent.putExtra("productPrice", precio);
             startActivity(intent);
         });
     }
@@ -86,6 +91,7 @@ public class CartaPrincipal extends AppCompatActivity {
         ImageButton addToCartButton8 = findViewById(R.id.addToCartButton8);
     }
 
+    // Método para manejar el resultado de la actividad DetalleProducto
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

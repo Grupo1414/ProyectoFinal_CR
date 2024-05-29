@@ -1,4 +1,4 @@
-package com.grupo14;
+package com.grupo14.Carrito;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -8,15 +8,14 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.grupo14.R;
 
 import java.util.List;
 
@@ -28,6 +27,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     private CartActivity cartActivity;
     private FirebaseUser currentUser;
 
+    // Constructor
     public CartAdapter(Context context, List<Carrito> carritoItems) {
         this.mInflater = LayoutInflater.from(context);
         this.carritoItems = carritoItems;
@@ -41,6 +41,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         }
     }
 
+    // Método para crear un nuevo ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -48,6 +49,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         return new ViewHolder(view);
     }
 
+    // Método para obtener el precio total del carrito
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Carrito item = carritoItems.get(position);
@@ -63,11 +65,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             }
         });
     }
-
+    // Método para obtener el número de elementos en el carrito
     @Override
     public int getItemCount() {
         return carritoItems.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView myTextView;
@@ -80,6 +83,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         }
     }
 
+    // método para mostrar el diálogo de confirmación de eliminación
     private void showDeleteConfirmationDialog(int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("¿Estás seguro de querer eliminar este ítem del carrito?");

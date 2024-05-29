@@ -1,4 +1,4 @@
-package com.grupo14;
+package com.grupo14.Carta;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,13 +7,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.grupo14.Carrito.Carrito;
+import com.grupo14.Carrito.CartActivity;
+import com.grupo14.R;
 
 public class DetalleProducto extends AppCompatActivity {
 
@@ -23,7 +24,7 @@ public class DetalleProducto extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_detail);
+        setContentView(R.layout.activity_detalleproducto);
 
         // Relacionamos la variable con las id del layout
         ImageView productImage = findViewById(R.id.image_product);
@@ -76,6 +77,7 @@ public class DetalleProducto extends AppCompatActivity {
         });
     }
 
+    // Método para añadir el producto al carrito
     private void añadirAlCarrito(String title, String price) {
         String userId = currentUser.getUid();
         String cartItemId = cartRef.push().getKey();

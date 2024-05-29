@@ -8,6 +8,8 @@
     <string name="nuestra_carta">Nuestra Carta</string>
     <!-- En strings.xml -->
     <string name="firebase_database_url">https://grupo14-252f0-default-rtdb.europe-west1.firebasedatabase.app</string>
+    <string name="volver">Volver</string>
+    <string name="resumen_de_pedidos">Resumen de pedidos</string>
     <string-array name="delivery_options">
         <item>Estándar</item>
         <item>Preferente</item>

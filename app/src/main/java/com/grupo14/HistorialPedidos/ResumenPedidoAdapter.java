@@ -1,12 +1,13 @@
-package com.grupo14;
+package com.grupo14.HistorialPedidos;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.grupo14.R;
 
 import java.util.ArrayList;
 

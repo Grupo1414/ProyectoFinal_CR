@@ -1,4 +1,4 @@
-package com.grupo14;
+package com.grupo14.Carrito;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.grupo14.Carta.CartaPrincipal;
+import com.grupo14.Pago.PaymentActivity;
+import com.grupo14.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +36,7 @@ public class CartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart);
+        setContentView(R.layout.activity_carrito);
 
         recyclerView = findViewById(R.id.cart_items_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -45,6 +48,7 @@ public class CartActivity extends AppCompatActivity {
         subtotalPrice = findViewById(R.id.subtotal_price);
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
+        //obtener el ccarrito del usuario
         if (currentUser != null) {
             cartRef = FirebaseDatabase.getInstance().getReference("carritos").child(currentUser.getUid());
             loadCartItems();
@@ -60,6 +64,7 @@ public class CartActivity extends AppCompatActivity {
         Button backButton = findViewById(R.id.button_back);
         backButton.setOnClickListener(v -> finish());
 
+        //boton añadir mas productos, redirige a la carta
         Button addMoreItemsButton = findViewById(R.id.button_add_more_items);
         addMoreItemsButton.setOnClickListener(v -> {
             Intent intent = new Intent(CartActivity.this, CartaPrincipal.class);
@@ -67,6 +72,7 @@ public class CartActivity extends AppCompatActivity {
         });
     }
 
+    //obtener productos del carrito de la base de datos
     private void loadCartItems() {
         cartRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -84,16 +90,18 @@ public class CartActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Manejar error
+
             }
         });
     }
 
+    //actualiza el total de los productos que hay en el carrito
     public void updateTotalPrice() {
         double total = calcularTotal();
         subtotalPrice.setText(String.format("%.2f €", total));
     }
 
+    //suma todos los productos del carrito
     private double calcularTotal() {
         double total = 0;
         for (Carrito item : carritoItems) {

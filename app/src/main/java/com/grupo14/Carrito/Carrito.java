@@ -1,5 +1,6 @@
-package com.grupo14;
+package com.grupo14.Carrito;
 
+//Crear objetos de tipo carrito para persistir en realtime database
 public class Carrito {
     private String id;
     private String userId;  // Añadir este campo

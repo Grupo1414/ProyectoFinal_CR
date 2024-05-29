@@ -1,4 +1,4 @@
-package com.grupo14;
+package com.grupo14.Pago;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +18,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.grupo14.Carrito.Carrito;
+import com.grupo14.Carta.CartaPrincipal;
+import com.grupo14.HistorialPedidos.ResumenPedido;
+import com.grupo14.R;
 
 import java.util.ArrayList;
 
@@ -31,7 +35,7 @@ public class PaymentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
+        setContentView(R.layout.activity_pago);
 
         direccionEditText = findViewById(R.id.edittext_additional_info);
         numeroTarjetaEditText = findViewById(R.id.edittext_card_number);
@@ -49,7 +53,7 @@ public class PaymentActivity extends AppCompatActivity {
             Toast.makeText(this, "Error: el subtotal es 0.0", Toast.LENGTH_SHORT).show();
         }
 
-        // Mostrar campos de tarjeta al pulsar el botón
+        // Mostrar campos de tarjeta solo al pulsar el botón de añadir
         buttonAddCreditCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +62,7 @@ public class PaymentActivity extends AppCompatActivity {
             }
         });
 
-        // Manejar el clic del botón de pago
+        // Gestion del botón de pago
         buttonPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,15 +79,14 @@ public class PaymentActivity extends AppCompatActivity {
                         Intent intentCartaPrincipal = new Intent(PaymentActivity.this, CartaPrincipal.class);
                         startActivity(intentCartaPrincipal);
 
-                        // Terminar PaymentActivity
                         finish();
                     }
                 }, 5000); // 5000 milisegundos = 5 segundos
             }
         });
-
     }
 
+    // Método para guardar el pedido en firebase
     private void guardarPedido() {
         // Obtener valores de los campos de texto
         String direccion = direccionEditText.getText().toString().trim();

@@ -1,15 +1,16 @@
-package com.grupo14;
+package com.grupo14.Pago;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-public class PasarelaPago extends AppCompatActivity {
+import com.grupo14.Carta.CartaPrincipal;
+import com.grupo14.R;
 
+public class PasarelaPago extends AppCompatActivity {
     private static final long RETRASO_MOSTRAR_CARTA_PRINCIPAL = 5000; // 5 segundos
     private CardView cardViewThankYou;
 

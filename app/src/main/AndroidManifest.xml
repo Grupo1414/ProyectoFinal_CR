@@ -19,7 +19,7 @@
 
         <!-- Actividad principal -->
         <activity
-            android:name=".MainActivity"
+            android:name=".Login.MainActivity"
             android:theme="@style/AppTheme"
             android:exported="true">
 
@@ -29,23 +29,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterPage"
+        <activity android:name=".Login.RegisterPage"
             android:theme="@style/AppTheme" />
-        <activity android:name=".CartActivity"
+        <activity android:name=".Carrito.CartActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".CartAdapter"
+        <activity android:name=".Carrito.CartAdapter"
             android:theme="@style/AppTheme" />
-        <activity android:name=".CartaPrincipal"
+        <activity android:name=".Carta.CartaPrincipal"
             android:theme="@style/AppTheme" />
-        <activity android:name=".DetalleProducto"
+        <activity android:name=".Carta.DetalleProducto"
             android:theme="@style/AppTheme" />
-        <activity android:name=".PaymentActivity"
+        <activity android:name=".Pago.PaymentActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".PasarelaPago"
+        <activity android:name=".Pago.PasarelaPago"
             android:theme="@style/AppTheme"/>
-        <activity android:name=".ResumenPedidoAdapter"
+        <activity android:name=".HistorialPedidos.ResumenPedidoAdapter"
             android:theme="@style/AppTheme"/>
-        <activity android:name=".ResumenPedidosActivity"
+        <activity android:name=".HistorialPedidos.ResumenPedidosActivity"
             android:theme="@style/AppTheme"/>
 
     </application>
