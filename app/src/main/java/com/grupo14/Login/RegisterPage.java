@@ -46,6 +46,7 @@ public class RegisterPage extends AppCompatActivity {
             }
         });
 
+        //Registro de usuarios
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

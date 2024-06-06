@@ -46,6 +46,7 @@ public class ResumenPedidosActivity extends AppCompatActivity {
             }
         });
 
+        //Obtener pedidos del usuario autenticado
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
